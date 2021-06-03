@@ -1,8 +1,8 @@
 {
   "name": "serverless-app",
   "version": "1.0.0",
-  "description": "Codingly template for Serverless Framework projects",
-  "author": "Ariel Weinberger <ariel@codingly.io>",
+  "description": "Serverless App",
+  "author": "Slavo3dev>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",
