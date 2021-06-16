@@ -19,7 +19,7 @@ async function createAuction(event,context) {
   };
 
   try {
-     await dynamoDb.put({
+    await dynamoDb.put({
     TableName: process.env.AUCTIONS_TABLE_NAME,
     Item: auction
   }).promise();
