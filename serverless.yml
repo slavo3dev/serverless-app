@@ -30,8 +30,8 @@ functions:
       handler: src/handlers/getAuctions.handler
       events:
         - http:
-          method: GET
-          path: /auctions
+            method: GET
+            path: /auctions
           
 
 custom: 
