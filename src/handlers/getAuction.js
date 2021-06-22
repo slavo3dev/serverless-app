@@ -9,7 +9,7 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 async function getAuction(event,context) {
     let auction;
-    const {id } = event.pathParamaters
+    const { id } = event.pathParameters
   
   try {
       const result = await dynamoDb.get({
