@@ -5,17 +5,18 @@ import httpEventNormalizer from '@middy/http-event-normalizer';
 import httpErrorHandler from '@middy/http-error-handler';
 import createError from "http-errors"
 
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
+const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 async function getAuction(event,context) {
-    let auction;
-    const { id } = event.pathParameters
+    let auction
+    const { id } = event.pathParameters;
+  
   
   try {
-      const result = await dynamoDb.get({
+      const result = await dynamodb.get({
         TableName: process.env.AUCTIONS_TABLE_NAME,
-        Key: { id }
-      }).prmise()
+        Key: { id: id },
+      }).promise()
       
       auction = result.Item
   }
