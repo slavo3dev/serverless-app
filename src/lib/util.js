@@ -4,5 +4,5 @@ import httpErrorHandler from '@middy/http-error-handler';
 import middy from "@middy/core";
 
 
-export default handlerMiddy => middy(handler).use([httpErrorHandler() ,httpJsonBodyParser() ,httpEventNormalizer()])
+export const handlerMiddy = () => middy(handler).use([httpErrorHandler() ,httpJsonBodyParser() ,httpEventNormalizer()])
 

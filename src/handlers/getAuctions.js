@@ -1,5 +1,5 @@
 import AWS from 'aws-sdk';
-import handlerMiddy from "../lib/util"
+import  { handlerMiddy } from "../lib/util"
 import createError from "http-errors"
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
