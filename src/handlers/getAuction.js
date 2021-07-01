@@ -30,8 +30,7 @@ export async function getAuctionById(id) {
 
 async function getAuction(event,context) {
     const { id } = event.pathParameters;
-  
-    getAuctionById(id)
+    const auction = await getAuctionById(id)
 
   return {
     statusCode: 200,
