@@ -3,7 +3,7 @@ import  validator from "@middy/validator"
 import AWS from 'aws-sdk';
 import  { handlerMiddy } from "../lib/util"
 import createError from "http-errors"
-import { createAuctionShema } from "../lib/schema"
+import { createAuctionSchema } from "../lib/schema"
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
@@ -41,13 +41,7 @@ async function createAuction(event,context) {
   };
 };
 
-export const handler = handlerMiddy(createAuction).use(validator({
-        inputSchema: createAuctionShema,
-        ajvOptions: {
-          useDefaults: true,
-          strict: false,
-        },
-      }))
+export const handler = handlerMiddy(createAuction).use(validator({ inputSchema: createAuctionSchema }));
  
 
 

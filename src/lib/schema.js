@@ -15,32 +15,34 @@ export const getAuctionsSchema = {
   required: ["queryStringParameter"]
 }
 
-export const createAuctionShema = {
+export const createAuctionSchema = {
+  type: 'object', 
   properties: {
-        body: {
-          type: "object",
-            properties: {
-              title: {
-                type: "string",
-              }    
-          }
+    body: {
+      type: 'object',
+      properties: {
+        title: {
+          type: 'string',
         },
-      required: ['title']
+      },
+      required: ['title'],
     },
-  required: ['body']
+  },
+  required: ['body'],
 }
 
 export const placeBidSchema = {
-    properties: {
-        body: {
-          type: "object",
-            properties: {
-              amount: {
-                type: number,
-              }    
-          }
+  type: 'object', 
+  properties: {
+    body: {
+      type: 'object',
+      properties: {
+        amount: {
+          type: 'number',
         },
-      required: ['amount']
+      },
+      required: ['amount'],
     },
-  required: ['body']
+  },
+  required: ['body'],
 }
