@@ -30,7 +30,7 @@ export const getEnedAuctions = async () => {
    
 }
 
-export const closeAuction = (auction) => {
+export const closeAuction = async (auction) => {
   const params = {
     TableName: process.env.AUCTIONS_TABLE_NAME,
     Key: { id: auction.id },
