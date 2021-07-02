@@ -1,6 +1,9 @@
-async function processAuctions(event, context) {
+import { getEnedAuctions } from "../lib/util"
 
-    console.log("Process Auctions!!")
+async function processAuctions(event,context) {
+    
+    const auctionsToClose = await getEnedAuctions();
+    console.log("Auctions to Close", auctionsToClose)
 
     
 }
