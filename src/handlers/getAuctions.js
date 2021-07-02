@@ -7,6 +7,10 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 async function getAuctions(event,context) {
   let auctions;
   const {status} = event.queryStringParameters;
+
+  if (!status) {
+    throw new createError.Forbidden(`Status is missing: ${status}, please try query OPEN or CLOSED status`)
+  }
   
   const params = {
     TableName: process.env.AUCTIONS_TABLE_NAME,
