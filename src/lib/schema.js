@@ -12,9 +12,7 @@ export const getAuctionsSchema = {
       }
      }
   },
-  required: [
-     
-  ]
+  required: ["queryStringParameter"]
 }
 
 export const createAuctionShema = {
