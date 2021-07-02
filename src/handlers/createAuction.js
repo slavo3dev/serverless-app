@@ -42,7 +42,7 @@ async function createAuction(event,context) {
 };
 
 export const handler = handlerMiddy(createAuction).use(validator({
-        inputSchema: createAuction,
+        inputSchema: createAuctionShema,
         ajvOptions: {
           useDefaults: true,
           strict: false,

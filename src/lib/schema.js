@@ -22,12 +22,25 @@ export const createAuctionShema = {
             properties: {
               title: {
                 type: "string",
-                enum: ["OPEN","CLOSED"],
-                default: "OPEN"
               }    
           }
         },
       required: ['title']
+    },
+  required: ['body']
+}
+
+export const placeBidSchema = {
+    properties: {
+        body: {
+          type: "object",
+            properties: {
+              amount: {
+                type: number,
+              }    
+          }
+        },
+      required: ['amount']
     },
   required: ['body']
 }
