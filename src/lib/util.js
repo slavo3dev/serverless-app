@@ -46,3 +46,22 @@ export const closeAuction = async (auction) => {
   const result = await dynamodb.update(params).promise();
   return result;
 }
+
+export const getAuctionsSchema = {
+  type: "object",
+  properties: {
+    queryStringParameters: {
+      type: "object",
+      properties: {
+        status: {
+          type: "string",
+          enum: ["OPEN","CLOSED"],
+          default: "OPEN"
+        }
+      }
+     }
+  },
+  required: [
+     
+  ]
+}
