@@ -1,10 +1,18 @@
 import { getEnedAuctions, closeAuction } from "../lib/util"
-
+import createError from "http-errors"
 async function processAuctions(event,context) {
     
-    const auctionsToClose = await getEnedAuctions();
-    const closePromises = auctionsToClose.map(auction => closeAuction(auction.id))
-    await Promise.all(closePromises)  
+
+    try {
+         const auctionsToClose = await getEnedAuctions();
+         const closePromises = auctionsToClose.map(auction => closeAuction(auction.id))
+         await Promise.all(closePromises)
+
+    } catch (err) {
+        console.error("Error: ",err);
+        throw new createError.InternalServerError(err) 
+    }
+     
 }
 
 export const handler = processAuctions
